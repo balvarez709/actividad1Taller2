@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="https://www.w3schools.com/" target="_blank">
+</head>
+<body>
+
+<h1>The base element</h1>
+
+<input type="number" oninput="this.value = Math.abs(this.value)" id="1" name="materia1"/> 
+<input type="number" oninput="this.value = Math.abs(this.value)" id="2" name="materia2"/>
+<button id="bt1" onclick="validar()" name="bt1">Validar</button>
+<label id="lbl1" >Resultado</label>
+
+</body>
+</html>
+
+<script>
+    function validar(){
+       var materia1 = document.getElementById("1").value
+       var materia2 = document.getElementById("2").value
+       
+       if(Number(materia1) > 100 || Number(materia2) > 100 || isNaN(materia1) || isNaN(materia2) || Number(materia2) == 0 || Number(materia1) == 0) {
+        document.getElementById("lbl1").innerText = "ingrese un valor valido"
+       } else {
+        if (Number(materia1) > Number(materia2)){
+            document.getElementById("lbl1").innerText = "Materia 1 tiene mas alumnos"
+        } else if (Number(materia2) > Number(materia1)) {
+            document.getElementById("lbl1").innerText = "Materia 2 tiene mas alumnos"
+        } 
+       }
+    }
+   
+</script>
+
